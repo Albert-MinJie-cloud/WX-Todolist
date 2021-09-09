@@ -42,6 +42,7 @@ Page({
 
   /* 时间选择器的选择时间 */
   selectTime(event) {
+    console.log('event.detail', event.detail);
     this.setData({
       currentDate: event.detail,
     });

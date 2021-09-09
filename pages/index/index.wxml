@@ -31,7 +31,8 @@
         </van-cell-group>
         <view slot="right">
           <view class="right-btn-flex">
-            <view class="right-btn-flex-complete" bindtap="toDetail" data-Id="{{item.id}}" data-Status="{{item.status}}">
+            <view class="right-btn-flex-complete" bindtap="toDetail" data-Id="{{item.id}}"
+              data-Status="{{item.status}}">
               <vant-button block>详情</vant-button>
             </view>
             <view class="right-btn-flex-delete" bindtap="deleteTodo" data-Id="{{item.id}}">
