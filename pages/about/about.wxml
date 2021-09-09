@@ -1,0 +1,27 @@
+<view class="about">
+  <view class="card">
+    <view class="card-title">扫码下载该项目</view>
+    <view class="card-content">
+      <view>
+        <image class="pic" src="{{gitUrl}}"></image>
+      </view>
+
+      <view>
+        <van-button color="#1989fa" size="small" aspectFill>扫码到Github下载</van-button>
+      </view>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="card-title">长按图片添加作者微信</view>
+    <view class="card-content">
+      <view>
+        <image class="pic" src="{{wxUrl}}"></image>
+      </view>
+
+      <view>
+        <van-button color="#ffca28" size="small" aspectFill>扫码添加作者微信</van-button>
+      </view>
+    </view>
+  </view>
+</view>

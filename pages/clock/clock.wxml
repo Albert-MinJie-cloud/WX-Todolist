@@ -1,0 +1,16 @@
+<view>
+  <view class="clock-bg">
+    <view class="clock" style="background: url({{image}}); background-size: cover;">
+      <view class="hour">
+        <view class="hr" id="hr" style="{{hourDeg}}"></view>
+      </view>
+      <view class="min">
+        <view class="mn" id="mn" style="{{minDeg}}"></view>
+      </view>
+      <view class="second">
+        <view class="sec" id="sec" style="{{ dayDeg }}"></view>
+      </view>
+    </view>
+    <view class="timedisplay">{{hour}}时{{min}}分{{second}}秒</view>
+  </view>
+</view>

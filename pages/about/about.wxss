@@ -1,0 +1,35 @@
+.about {
+  height: 100vh;
+  overflow: hidden;
+  background: #f7f8fa;
+}
+
+.card {
+  margin: 24rpx 24rpx 0 24rpx;
+  border-radius: 24rpx;
+  overflow: hidden;
+}
+
+.card-title {
+  background: rgb(255, 255, 255);
+  text-align: center;
+  padding: 24rpx;
+  border-bottom: 2rpx dashed #cdcdcd;
+}
+
+.card-content {
+  background: white;
+  text-align: center;
+  padding: 24rpx ;
+}
+
+
+.pic {
+  width: 240px;
+  height: 240px;
+}
+
+.btn {
+  margin-top: 48rpx;
+  height: 48rpx;
+}

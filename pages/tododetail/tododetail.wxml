@@ -1,0 +1,49 @@
+<view class="add-todo">
+
+  <view class="title">
+    <view class="title-text">事项说明</view>
+    <van-field value="{{ title }}" placeholder="请输入事项描述" border="{{ false }}" bind:change="inputTitle"
+      custom-style="{{titleInput}}" disabled="{{status == 1 ? false : true}}" />
+  </view>
+
+  <view class="remind" wx:if="{{status == 1}}">
+    <view class="remind-text">提醒时间</view>
+    <van-cell is-link arrow-direction="down" title="选择时间" value="{{selectDate}}" bindtap="datePickerOpen"
+      disabled="{{status == 1 ? false : true}}" />
+  </view>
+
+  <view class="remind" wx:if="{{status == 2}}">
+    <view class="remind-text">提醒时间</view>
+    <van-cell label="{{selectDate}}" readonly />
+  </view>
+
+  <view class="repeat" wx:if="{{status == 1}}">
+    <view class="repeat-text">重复频率</view>
+    <van-cell is-link arrow-direction="down" title="选择频率" value="{{repeatText}}" bindtap="repeatPickerOpen"
+      disabled="{{status == 1 ? false : true}}" />
+  </view>
+
+
+  <view class="repeat" wx:if="{{status == 2}}">
+    <view class="repeat-text">重复频率</view>
+    <van-cell label="{{repeatText}}" readonly />
+  </view>
+
+  <view class="bottom-addBtn" wx:if="{{status == 1}}">
+    <view class="addBtn">
+      <van-button color="#1989fa" round block size="default" bind:click="updateTodo">更新待办</van-button>
+    </view>
+  </view>
+
+  <!-- 时间选择器的弹出层 -->
+  <van-action-sheet show="{{ datePickerDisplay }}" bind:close="datePickerClose">
+    <van-datetime-picker type="datetime" bind:confirm="confirmTime" bind:cancel="datePickerClose" title="提醒时间"
+      value="{{currentDate}}" min-date="{{minData}}" bind:input="selectTime" />
+  </van-action-sheet>
+
+  <!-- 重复频率选择的弹出层 -->
+  <van-action-sheet show="{{ repeatPickerDisplay }}" bind:close="repeatPickerClose">
+    <van-picker show-toolbar title="请选择重复频率" columns="{{ repeatColumns }}" bind:cancel="repeatPickerClose"
+      bind:confirm="confirmRepeat" bind:change="selectRepeat" />
+  </van-action-sheet>
+</view>

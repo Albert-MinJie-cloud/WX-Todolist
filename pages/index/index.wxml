@@ -1,0 +1,77 @@
+<view class="home">
+
+  <view class="sort">
+    <view class="left">
+      <van-dropdown-menu active-color="#1989fa" overlay="{{false}}">
+        <van-dropdown-item model:value="{{ value }}" options="{{ option }}" bind:change='dropDownChange' />
+      </van-dropdown-menu>
+    </view>
+    <view class="right">
+      <view class="right-content">
+        <text class="sort-text">{{selectSort}}</text>
+        <van-switch checked="{{ checked }}" active-color="#1989fa" inactive-color="#fff" size="16px"
+          bind:change="switchChange" />
+      </view>
+    </view>
+  </view>
+
+  <view class="din"></view>
+
+  <!-- 已完成的事项 -->
+  <view>
+    <view wx:for="{{todoList}}" wx:key="index" wx:if="{{todoList.length > 0}}">
+      <van-swipe-cell right-width="{{ 140 }}">
+        <van-cell-group border="false">
+          <view wx:if="{{item.status === 2}}">
+            <van-cell title="{{item.name}}" value="{{item.created_at}}" data-Id="{{item.id}}"
+              data-Status="{{item.status}}" border="false" custom-class="cell" clickable bindtap="toDetail">
+              <van-icon slot="icon" name="success" color="#1989f9" class="left-icon" />
+            </van-cell>
+          </view>
+        </van-cell-group>
+        <view slot="right">
+          <view class="right-btn-flex">
+            <view class="right-btn-flex-complete" bindtap="toDetail" data-Id="{{item.id}}" data-Status="{{item.status}}">
+              <vant-button block>详情</vant-button>
+            </view>
+            <view class="right-btn-flex-delete" bindtap="deleteTodo" data-Id="{{item.id}}">
+              <vant-button block>删除</vant-button>
+            </view>
+          </view>
+        </view>
+      </van-swipe-cell>
+    </view>
+  </view>
+
+  <!-- 未完成的事项 -->
+  <view>
+    <view wx:for="{{todoList}}" wx:key="index" wx:if="{{todoList.length > 0}}">
+      <van-swipe-cell right-width="{{ 140 }}">
+        <van-cell-group border="false">
+
+          <view wx:if="{{item.status === 1}}">
+            <van-cell title="{{item.name}}" value="{{item.created_at}}" data-Id="{{item.id}}"
+              data-status="{{item.status}}" border="false" custom-class="cell" clickable bindtap="toDetail">
+              <van-icon slot="icon" name="circle" color="#ee0a24" class="left-icon" />
+            </van-cell>
+          </view>
+
+        </van-cell-group>
+        <view slot="right">
+          <view class="right-btn-flex">
+            <view class="right-btn-flex-complete" bindtap="completeTodo" data-Id="{{item.id}}">
+              <vant-button block>完成</vant-button>
+            </view>
+            <view class="right-btn-flex-delete" bindtap="deleteTodo" data-Id="{{item.id}}">
+              <vant-button block>删除</vant-button>
+            </view>
+          </view>
+        </view>
+      </van-swipe-cell>
+    </view>
+  </view>
+
+  <view class="add-todo" bindtap="toAdd">
+    <van-icon name="plus" size="{{24}}" color="white" />
+  </view>
+</view>

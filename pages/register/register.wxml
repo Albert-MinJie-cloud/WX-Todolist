@@ -1,0 +1,55 @@
+<view class="register">
+  <view class="register-text">注册</view>
+
+  <view class="register-input">
+    <van-cell-group>
+      <van-field left-icon="phone-o" clickable clearable model:value="{{ phone }}" label="手机号" placeholder="请输入手机号"
+        input-class="label" maxlength="{{11}}" error-message="{{phoneError}}" bind:change="phoneChange" />
+
+      <van-field left-icon="label-o" clickable clearable model:value="{{ nickname }}" label="昵称" placeholder="请输入昵称"
+        input-class="label" error-message="{{nicknameError}}" bind:change="nicknameChange" />
+
+      <van-field left-icon="smile-comment-o" model:value="{{code}}" center clickable clearable label="验证码"
+        placeholder="请输入短信验证码" input-class="label" use-button-slot maxlength="{{6}}" error-message="{{codeError}}"
+        bind:change="codeChange" disabled="{{codeDisable}}">
+
+        <van-button slot="button" size="small" color="#1989fa" bind:click="getCode" wx:if="{{!countDownStatus}}">
+          获取验证码
+        </van-button>
+
+        <van-button slot="button" color="#1989fa" type="primary" size="small" wx:if="{{countDownStatus}}">
+          <van-count-down time="{{time}}" auto-start bind:finish="timeOver" use-slot bind:change="timeChange">
+            <text class="item">{{ timeDate.seconds }} 秒</text>
+          </van-count-down>
+        </van-button>
+
+      </van-field>
+
+
+      <van-field left-icon="records" clickable clearable type="{{passwordType}}" model:value="{{password}}" label="密码"
+        input-class="label" placeholder="请输入密码" class="register-password" maxlength="{{16}}"
+        error-message="{{passwordError}}" right-icon="{{passwordIcon}}" bind:click-icon="changePasswordIcon"
+        bind:change="passwordChange" />
+    </van-cell-group>
+
+  </view>
+
+  <view class=" btn">
+    <view class="button">
+      <van-button color="#1989fa" round size="small" block bindtap="loginRequest">注册</van-button>
+    </view>
+  </view>
+
+  <van-dialog use-slot title="输入图片验证码" show="{{ codeDialog }}" bind:confirm="codeConfirm">
+    <view class="code">
+      <view class="pic-code">
+        <image src="{{codePicUrl}}" class="code-pic" />
+      </view>
+      <view class="pic-input">
+        <input maxlength="10" placeholder="请输入图片验证码" model:value="{{picCode}}" />
+        <button size="mini" class="pic-input-btn" bindtap="getCode">换一张</button>
+      </view>
+    </view>
+  </van-dialog>
+
+</view>

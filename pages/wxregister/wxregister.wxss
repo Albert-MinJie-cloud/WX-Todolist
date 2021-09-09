@@ -1,0 +1,71 @@
+.wx-register {
+  height: 100vh;
+}
+
+.wxregister-title {
+  font-size: 1.5rem;
+  margin-top: 5rem;
+  margin-left: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.wxregister-input {
+  padding: 0 1rem;
+  margin-bottom: 4rem;
+}
+
+
+.btn {
+  text-align: center;
+}
+
+.button {
+  display: inline-block;
+  width: 200rpx;
+  text-align: center;
+}
+
+.space {
+  display: inline-block;
+  width: 2rem;
+}
+
+.label {
+  font-size: 12px;
+}
+
+.item {
+  display: inline-block;
+  margin-right: 5px;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 2px;
+}
+
+.code {
+  padding: 24px;
+}
+
+.pic-code {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.code-pic {
+  width: 90px;
+  height: 60px;
+}
+
+.pic-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pic-input-btn {
+  color: #fff;
+  background-color: #1989fa;
+}

@@ -1,0 +1,24 @@
+<view class="schedule">
+  <calendar-week bindmonthDateclick="monthClick" binddayDateclick="todayClick"></calendar-week>
+  <view class="today-todo">
+    <view class="today">{{nowMonth}}月{{nowDay}}日</view>
+
+    <view wx:if="{{list.length>0}}">
+      <view wx:for="{{list}}" wx:key="index">
+        <van-swipe-cell right-width="{{ 65 }}" left-width="{{ 65 }}">
+          <view slot="left">选择</view>
+          <van-cell-group border="false">
+            <van-cell title="{{item.name}}" value="{{item.created_at}}" border="false" custom-class="cell" />
+          </van-cell-group>
+          <view slot="right">删除</view>
+        </van-swipe-cell>
+      </view>
+    </view>
+    
+    <view wx:else>
+      <van-empty image="network" description="暂无数据" />
+    </view>
+  </view>
+
+
+</view>

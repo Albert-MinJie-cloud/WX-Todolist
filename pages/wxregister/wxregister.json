@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "免密账户绑定",
+  "usingComponents": {
+    "van-field": "@vant/weapp/field/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-count-down": "@vant/weapp/count-down/index",
+    "van-dialog": "@vant/weapp/dialog/index"
+  }
+}

@@ -1,0 +1,44 @@
+<view class="wx-register">
+  <view class="wxregister-title">绑定手机号</view>
+
+  <view class="wxregister-input">
+    <van-field left-icon="phone-o" clickable clearable model:value="{{ phone }}" label="手机号" placeholder="请输入手机号"
+      input-class="label" maxlength="{{11}}" error-message="{{phoneError}}" bind:change="phoneChange" />
+
+    <van-field left-icon="smile-comment-o" model:value="{{code}}" center clickable clearable label="验证码"
+      placeholder="请输入短信验证码" input-class="label" use-button-slot maxlength="{{4}}" error-message="{{codeError}}"
+      bind:change="codeChange" disabled="{{codeDisable}}">
+
+      <van-button slot="button" size="small" color="#1989fa" bind:click="getPicCode" wx:if="{{!countDownStatus}}">
+        获取验证码
+      </van-button>
+
+      <van-button slot="button" color="#1989fa" type="primary" size="small" wx:if="{{countDownStatus}}">
+        <van-count-down time="{{time}}" auto-start bind:finish="timeOver" use-slot bind:change="timeChange">
+          <text class="item">{{ timeDate.seconds }} 秒</text>
+        </van-count-down>
+      </van-button>
+
+    </van-field>
+  </view>
+
+  <view class=" btn">
+    <view class="button">
+      <van-button color="#1989fa" round size="small" block bindtap="register">注册</van-button>
+    </view>
+  </view>
+
+  <van-dialog use-slot title="输入图片验证码" show="{{ codeDialog }}" bind:confirm="getCode">
+    <view class="code">
+      <view class="pic-code">
+        <image src="{{codePicUrl}}" class="code-pic" />
+      </view>
+      <view class="pic-input">
+        <input maxlength="4" placeholder="请输入图片验证码" model:value="{{picCode}}" />
+        <button size="mini" class="pic-input-btn" bindtap="getPicCode">换一张</button>
+      </view>
+    </view>
+  </van-dialog>
+
+
+</view>

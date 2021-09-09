@@ -1,0 +1,83 @@
+<!--components/dkCalendar/dk-calendar.wxml-->
+<!-- 微打卡 -->
+<view class="dkDate-sm" wx:if="{{size=='m'}}">
+  <view class="row1" bindtap="goDateDK">
+    <view wx:for="{{row1}}" wx:for-index="row1Index" wx:key="row1Index" wx:for-item="row1">{{row1}}</view>
+    <view><image src="../../static/images/default/more.png"></image></view>
+  </view>
+  <view class="row2">
+    <view wx:for="{{row2}}" wx:for-index="row2Index" wx:key="row2Index" wx:for-item="row2" bindtap="changeCurrDay" data-day="{{row2}}" data-click="{{row2Index>3}}">
+      <text class="{{row2Index>3?'gray':''}}">{{row2}}</text>
+      <view wx:if="{{currDay==row2}}" class="yellow"></view>
+    </view>
+    <view>
+      <text class="gray">...</text>
+    </view>
+  </view>
+  <view class="row3">
+    <view wx:for="{{row3}}" wx:for-index="row3Index" wx:key="row3Index" wx:for-item="row3">
+      <image wx:if="{{row3}}" src="../../static/images/default/active.png"></image>
+    </view>
+    <view></view>
+  </view>
+</view>
+<!-- 月打卡日历 -->
+<view class="dkDate" wx:if="{{!size}}">
+  <view class="pnBox">
+    <image bindtap="preDate" src="../../static/images/default/pre.png" class="pre" wx:if="{{isPre}}"></image>
+    <image bindtap="preDate" src="../../static/images/default/pre_gray.png" class="pre" wx:if="{{!isPre}}"></image>
+    <text>{{chooseYear}}年 {{chooseMonth}}月</text>
+    <image bindtap="nextDate" src="../../static/images/default/next.png" class="next" wx:if="{{isNext}}"></image>
+    <image bindtap="nextDate" src="../../static/images/default/next_gray.png" class="next" wx:if="{{!isNext}}"></image>
+  </view>
+  <view class="row1 gray-p" bindtap="goDateDK">
+    <view wx:for="{{row1}}" wx:for-index="row1Index" wx:key="row1Index" wx:for-item="row1">{{row1}}</view>
+  </view>
+  <view class="row2">
+    <view wx:for="{{row2}}" wx:for-index="row2Index" wx:key="row2Index" wx:for-item="row2" bindtap="changeCurrDay" data-day="{{row2}}" data-click="{{checkedColor.gray(chooseYear,chooseMonth,row2)}}">
+      <text class="{{checkedColor.gray(chooseYear,chooseMonth,row2)?'gray-p':''}}">{{row2}}</text>
+      <!-- 黄色标记 -->
+      <view wx:if="{{checkedColor.yellow(currDayDetail,chooseYear,chooseMonth,row2)}}" class="yellow"></view>
+      <!-- 打卡标记 -->
+      <image wx:if="{{row3[row2Index]}}" src="../../static/images/default/active.png"></image>
+      <view wx:if="{{!row3[row2Index]}}"></view>
+    </view>
+  </view>
+  <!-- 灰色检查 -->
+  <wxs module="checkedColor">
+    var gray = function(year,month,day){
+      var inputDate = year+'/'+month+'/'+day
+      var currYear = getDate().getFullYear()
+      var currMonth = getDate().getMonth()+1
+      var currDay = getDate().getDate()
+      // console.log(currYear,currMonth,currDay)
+      if(year>currYear) return true
+      else if(year==currYear&&month>currMonth) return true
+      else if(year==currYear&&month==currMonth&&day>currDay) return true
+      else return false
+    }
+    var yellow = function(detail,year,month,day){
+      // console.log(detail,year,month,day)
+      var newMonth = ''
+      var newDay = ''
+      var currDateDetail =''
+      if(month<10)
+        newMonth ='0'+month
+      else
+        newMonth=month
+      if(day<10)
+        newDay = '0'+day
+      else
+        newDay=day
+      currDateDetail= year+'/'+newMonth+'/'+newDay;
+      // console.log(detail,currDateDetail)
+      if(!detail||!day) return false
+      else if(detail==currDateDetail) return true
+      else return false
+    }
+    module.exports={
+      gray:gray,
+      yellow:yellow
+    }
+  </wxs>
+</view>

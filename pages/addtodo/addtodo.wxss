@@ -1,0 +1,54 @@
+.add-todo {
+  background: #ffffff;
+}
+
+.title {
+  padding: 0 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.title-text {
+  margin-bottom: 1rem;
+}
+
+
+.remind {
+  padding: 0 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.remind-text {
+  margin-bottom: 1rem;
+}
+
+.van-cell {
+  border-radius: 5px !important;
+  background: #f6f6f6 !important;
+}
+
+.repeat {
+  padding: 0 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.repeat-text {
+  margin-bottom: 1rem;
+}
+
+.date-picker {
+  font-size: 24rpx;
+  text-align: center;
+  margin-top: 24rpx;
+  color: #1989fa;
+}
+
+.bottom-addBtn {
+  text-align: center;
+  margin-top: 400rpx;
+  display: flex;
+}
+
+.addBtn {
+  width: 240rpx;
+  margin: auto;
+}

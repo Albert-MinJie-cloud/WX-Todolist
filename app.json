@@ -1,0 +1,56 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/schedule/schedule",
+    "pages/useraccenter/useraccenter",
+    "pages/clock/clock",
+    "pages/addtodo/addtodo",
+    "pages/tododetail/tododetail",
+    "pages/about/about",
+    "pages/wxregister/wxregister"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "TodoList",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#707070",
+    "selectedColor": "#1989fa",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "./tabbarImage/todo.png",
+        "selectedIconPath": "./tabbarImage/todo (1).png",
+        "text": "我的待办"
+      },
+      {
+        "pagePath": "pages/schedule/schedule",
+        "iconPath": "./tabbarImage/schedule.png",
+        "selectedIconPath": "./tabbarImage/schedule (1).png",
+        "text": "我的日程"
+      },
+      {
+        "pagePath": "pages/clock/clock",
+        "iconPath": "./tabbarImage/clock1.png",
+        "selectedIconPath": "./tabbarImage/clock2.png",
+        "text": "时钟"
+      },
+      {
+        "pagePath": "pages/useraccenter/useraccenter",
+        "iconPath": "./tabbarImage/my.png",
+        "selectedIconPath": "./tabbarImage/my (1).png",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "usingComponents": {
+    "van-tabbar": "@vant/weapp/tabbar/index",
+    "van-tabbar-item": "@vant/weapp/tabbar-item/index"
+  }
+}

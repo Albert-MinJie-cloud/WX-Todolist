@@ -1,0 +1,38 @@
+<view class="useraccenter">
+  <view class="userInfo">
+    <view wx:if="{{userInfo === ''}}" class="useravatar">
+      <view class="avatar" bindtap="toLogin">
+        <van-image round fit="cover" width="6rem" height="6rem" src="{{userUnLogin}}"
+          image-class='border:1px solid #cdcdcd' />
+      </view>
+      <view class="userlogin">
+        <text>未登录</text>
+      </view>
+    </view>
+
+    <view wx:if="{{userInfo !== ''}}" class="useravatar">
+      <view class="avatar">
+        <image class="user-login" src="{{userLogin}}" mode="cover"></image>
+      </view>
+      <view class="userlogin">
+        <text>{{userInfo.nickname}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="action">
+    <van-cell title=" 使用手册" is-link size="large" icon="setting-o" />
+    <van-cell title=" 关于作者" is-link size="large" icon="manager-o" bindtap="toAbout"/>
+    <view class="space"></view>
+    <van-cell title=" 我的数据" is-link size="large" icon="setting-o" />
+    <van-cell title=" 在线分享" is-link size="large" icon="manager-o" />
+    <view class="space"></view>
+    <van-cell title=" 检测更新" is-link size="large" icon="manager-o" />
+    <van-cell title=" 设置中心" is-link size="large" icon="setting-o" bindtap="toClock" />
+  </view>
+
+  <view wx:if="{{userInfo !== ''}}" class="exit-btn">
+    <van-button color="#1989fa" size="small" bind:click="exitLogin">退出登录</van-button>
+  </view>
+
+</view>
