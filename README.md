@@ -22,19 +22,11 @@
 # APP部分截图展示
 
 <code><img width="375" src="https://github.com/Albert-MinJie-cloud/WX-Todolist/blob/main/apppic/0c839ccecc21dd463153b432bfd9b72.png"></code>
-
-![](../TodoList/apppic/135b08cf582de25c1f314fda143302c.png)
-
-![](../TodoList/apppic/4b2bb933ffbf1ef289748a1a49460ed.png)
-
-![](../TodoList/apppic/aaf68b6dd87e88d063ea262996e5fea.png)
-
-![](../TodoList/apppic/787c38754517a9f48cde042fc703bcf.png)
-
-![](../TodoList/apppic/7b7591f55440c411471941f989a9834.png)
-
-![](../TodoList/apppic/d19bad1ae925b73beb1a6331e0d925e.png)
-
-![](../TodoList/apppic/ecd5a64fa88eb2c9d1e189a139125ea.png)
-
-![](../TodoList/apppic/f31d4e9945db8b1c0468a969ad0cf24.png)
+<code><img width="375" src="https://github.com/Albert-MinJie-cloud/WX-Todolist/blob/main/apppic/135b08cf582de25c1f314fda143302c.png"></code>
+<code><img width="375" src="https://github.com/Albert-MinJie-cloud/WX-Todolist/blob/main/apppic/4b2bb933ffbf1ef289748a1a49460ed.png"></code>
+<code><img width="375" src="https://github.com/Albert-MinJie-cloud/WX-Todolist/blob/main/apppic/aaf68b6dd87e88d063ea262996e5fea.png"></code>
+<code><img width="375" src="https://github.com/Albert-MinJie-cloud/WX-Todolist/blob/main/apppic/787c38754517a9f48cde042fc703bcf.png"></code>
+<code><img width="375" src="https://github.com/Albert-MinJie-cloud/WX-Todolist/blob/main/apppic/7b7591f55440c411471941f989a9834.png"></code>
+<code><img width="375" src="https://github.com/Albert-MinJie-cloud/WX-Todolist/blob/main/apppic/d19bad1ae925b73beb1a6331e0d925e.png"></code>
+<code><img width="375" src="https://github.com/Albert-MinJie-cloud/WX-Todolist/blob/main/apppic/ecd5a64fa88eb2c9d1e189a139125ea.png"></code>
+<code><img width="375" src="https://github.com/Albert-MinJie-cloud/WX-Todolist/blob/main/apppic/f31d4e9945db8b1c0468a969ad0cf24.png"></code>
