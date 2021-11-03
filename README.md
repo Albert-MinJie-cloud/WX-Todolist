@@ -21,7 +21,7 @@
 
 # APP部分截图展示
 
-![](../TodoList/apppic/0c839ccecc21dd463153b432bfd9b72.png)
+<code><img width="375" src="https://github.com/Albert-MinJie-cloud/WX-Todolist/blob/main/apppic/0c839ccecc21dd463153b432bfd9b72.png"></code>
 
 ![](../TodoList/apppic/135b08cf582de25c1f314fda143302c.png)
 
